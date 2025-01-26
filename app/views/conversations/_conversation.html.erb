@@ -1,0 +1,23 @@
+<%= turbo_frame_tag dom_id(conversation) do %>
+  <div class="chat chat-start">
+    <div class="chat-image avatar">
+      <div class="w-10 rounded-full">
+        <img src="https://api.dicebear.com/9.x/croodles/svg?seed=<%= Current.user.email_address %>" alt="">
+      </div>
+    </div>
+
+    <div class="chat-header">
+      <%= conversation.user.email_address %>
+      <time class="text-xs opacity-50 mb-1">
+        <%= time_ago_in_words conversation.created_at %>
+      </time>
+    </div>
+
+    <div class="chat-bubble ">
+      <%= conversation.message %>
+    </div>
+
+    <div class="chat-footer opacity-50">
+    </div>
+  </div>
+<% end %>

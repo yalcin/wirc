@@ -1,0 +1,6 @@
+/* postcss-ignore */
+@import 'tailwindcss';
+
+@plugin 'daisyui' {
+    themes: nord;
+}

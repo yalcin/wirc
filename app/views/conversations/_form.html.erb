@@ -1,0 +1,47 @@
+<%= turbo_stream_from "#{dom_id(conversation)}_form", channel: ConversationChannel %>
+<div id="<%= dom_id(conversation) %>_form">
+  <%= form_with(model: conversation) do |form| %>
+    <%# if conversation.errors.any? %>
+    <!--    <div style="color: red">-->
+    <!--      <h2><%#= pluralize(conversation.errors.count, "error") %> prohibited this conversation from being saved:</h2>-->
+
+    <!--      <ul>-->
+    <%# conversation.errors.each do |error| %>
+    <!--          <li><%#= error.full_message %></li>-->
+    <%# end %>
+    <!--      </ul>-->
+    <!--    </div>-->
+    <%# end %>
+
+    <div class="bg-base-200 w-full mt-7 p-2.5 rounded-4xl flex flex-row mt-auto">
+      <%= form.text_field :message, class: 'input input-bordered w-full text-slate-800 mr-2 rounded-3xl' %>
+      <!--    <input name="message" type="text" class="input input-bordered w-full text-slate-800 mr-2 rounded-3xl" />-->
+      <%= form.button :submit, class: 'btn btn-success text-secondary-content max-w-fit rounded-3xl' do %>
+        <%= form.hidden_field :room_id, value: 1 %>
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-send"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14l11 -11" /><path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" /></svg>
+      <% end %>
+      <!--    <button class="btn btn-success text-secondary-content max-w-fit rounded-3xl">-->
+
+      <!--    </button>-->
+    </div>
+
+    <!--  <div>-->
+    <%#= form.label :user_id, style: "display: block" %>
+    <%#= form.text_field :user_id %>
+    <!--  </div>-->
+
+    <!--  <div>-->
+    <%#= form.label :room_id, style: "display: block" %>
+    <%#= form.text_field :room_id %>
+    <!--  </div>-->
+
+    <!--  <div>-->
+    <%#= form.label :message, style: "display: block" %>
+    <%#= form.textarea :message %>
+    <!--  </div>-->
+
+    <!--  <div>-->
+    <%#= form.submit %>
+    <!--  </div>-->
+  <% end %>
+</div>

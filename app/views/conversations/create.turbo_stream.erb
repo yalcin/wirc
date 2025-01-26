@@ -1,0 +1,7 @@
+<%= turbo_stream.append "conversations" do %>
+  <%= render @conversation %>
+<% end %>
+<% conversation = Conversation.new %>
+<%= turbo_stream.replace "#{dom_id(conversation)}_form" do %>
+  <% render "form", conversation: conversation %>
+<% end %>

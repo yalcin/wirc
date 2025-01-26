@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss-cli": "^11.0.0",
+    "postcss-nesting": "^13.0.1"
+  },
+  "scripts": {
+    "build:css": "postcss ./app/assets/stylesheets/application.postcss.css -o ./app/assets/builds/application.css"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "daisyui": "^5.0.0-beta.1",
+    "tailwindcss": "^4.0.0"
+  }
+}

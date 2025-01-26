@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html data-theme="nord">
+  <head>
+    <title><%= content_for(:title) || "Wirc" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+<%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%#= stylesheet_link_tag :app, "data-turbo-track": Rails.env.production? ? "reload" : "" %>
+    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": Rails.env.production? ? "reload" : "" %>
+  </head>
+
+  <body class="bg-base bg-cover h-dvh" style="background-image: url('https://images.unsplash.com/photo-1485003975062-9946bdb9dbae?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNzU3NDQ2OXw&ixlib=rb-4.0.3&q=85&w=1920')">
+  <%= yield %>
+  </body>
+</html>
