@@ -81,9 +81,10 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: wirc_production
+    pool: postgresql://wirc:2RvwalsGT00Hac5Olw4Pv7LW69o5HnVL@dpg-cub8k0dds78s73aamd70-a/wirc
+    database: wirc
     username: wirc
-    password: <%= ENV["WIRC_DATABASE_PASSWORD"] %>
+    password: 2RvwalsGT00Hac5Olw4Pv7LW69o5HnVL
   cache:
     <<: *primary_production
     database: wirc_production_cache
