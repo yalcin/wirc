@@ -66,7 +66,7 @@ end
 
 gem "hotwire-livereload", "~> 2.0", :group => :development
 
-gem "redis", "~> 5.3"
+gem "redis", "~> 5.4"
 
 gem "faker", "~> 3.5", :group => :development
 
